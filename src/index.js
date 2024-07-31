@@ -5,11 +5,11 @@ dropdown.forEach(element => {
   const dropdownToggle = element.querySelector('.dropdown-toggle');
   const dropdownContent = element.querySelector('.dropdown-content');
   dropdownToggle.addEventListener('click', function(){
-    dropdown.forEach(drop => {
-      const otherDropdownContent = drop.querySelector('.dropdown-content');
-      otherDropdownContent.style.display = 'none';
-    })
     if (dropdownContent.style.display === 'none'){
+      dropdown.forEach(drop => {
+        const otherDropdownContent = drop.querySelector('.dropdown-content');
+        otherDropdownContent.style.display = 'none';
+      })
       dropdownContent.style.display = 'block';
       const buttons = dropdownContent.querySelectorAll('button');
       console.log(buttons);
@@ -18,7 +18,7 @@ dropdown.forEach(element => {
           dropdownContent.style.display = 'none';
         })
       })
-    } else {
+    } else if (dropdownContent.style.display === 'block') {
       dropdownContent.style.display = 'none';
     }
   })
