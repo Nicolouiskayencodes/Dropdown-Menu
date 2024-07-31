@@ -8,6 +8,13 @@ dropdown.forEach(element => {
   dropdownToggle.addEventListener('click', function(){
     if (dropdownContent.style.display === 'none'){
       dropdownContent.style.display = 'block';
+      const buttons = dropdownContent.querySelectorAll('button');
+      console.log(buttons);
+      buttons.forEach(button => {
+        button.addEventListener('click', function(){
+          dropdownContent.style.display = 'none';
+        })
+      })
     } else {
       dropdownContent.style.display = 'none';
     }
